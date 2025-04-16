@@ -7,11 +7,9 @@ const Index = () => {
   
   // Redirect to the home page on component mount
   useEffect(() => {
-    navigate('/', { replace: true });  // Using replace to avoid back button issues
+    navigate('/', { replace: true });
   }, [navigate]);
   
-  // This component will never actually render anything
-  // since it immediately redirects to the homepage
   return null;
 };
 

@@ -28,9 +28,9 @@ const VisitorCounter = () => {
   }, []);
   
   return (
-    <div className="text-sm bg-white rounded-lg shadow-sm p-4 flex items-center justify-center space-x-2 border border-gray-100">
+    <div className="text-sm bg-white rounded-lg shadow-md p-4 flex items-center justify-center space-x-2 border border-gray-100 w-full">
       <Eye size={16} className="text-blue-500" />
-      <p>Visitor count: <span className="font-semibold">{visitorCount}</span></p>
+      <p className="font-medium">Visitor count: <span className="font-semibold">{visitorCount}</span></p>
     </div>
   );
 };
