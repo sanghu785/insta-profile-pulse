@@ -25,5 +25,7 @@ export default defineConfig(({ mode }) => ({
     sourcemap: true,
     // Improve caching for better performance after laptop closure
     cssCodeSplit: true,
+    // Output directory for the build
+    outDir: 'dist',
   },
 }));
