@@ -18,6 +18,23 @@ const VisitorCounter = () => {
       localStorage.setItem('visitorCount', '1');
       setVisitorCount(1);
     }
+
+    // Add visibility change listener to handle resuming from sleep
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        // Refresh count when tab becomes visible again
+        const currentCount = localStorage.getItem('visitorCount');
+        if (currentCount) {
+          setVisitorCount(parseInt(currentCount));
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, []);
   
   return (

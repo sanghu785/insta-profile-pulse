@@ -20,4 +20,10 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Ensure source maps are generated for easier debugging
+    sourcemap: true,
+    // Improve caching for better performance after laptop closure
+    cssCodeSplit: true,
+  },
 }));

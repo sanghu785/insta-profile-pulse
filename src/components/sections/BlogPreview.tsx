@@ -3,10 +3,30 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
+import { useEffect, useState } from "react";
 
 const BlogPreview = () => {
-  // Get the 3 most recent blog posts
-  const recentPosts = blogPosts.slice(0, 3);
+  const [recentPosts, setRecentPosts] = useState(blogPosts.slice(0, 3));
+
+  // Re-initialize blog posts when component becomes visible
+  useEffect(() => {
+    // Initial setup
+    setRecentPosts(blogPosts.slice(0, 3));
+
+    // Handle visibility change (laptop closing/opening)
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        // Refresh blog posts when tab becomes visible again
+        setRecentPosts([...blogPosts.slice(0, 3)]);
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
 
   return (
     <section id="blog" className="section scroll-mt">
