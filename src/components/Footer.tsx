@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-4 mb-4">
               <a 
-                href="https://instagram.com/yourusername" 
+                href="https://instagram.com/sanghu785" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-primary transition-colors"
@@ -57,7 +57,7 @@ const Footer = () => {
                 <span className="sr-only">Facebook</span>
               </a>
               <a 
-                href="https://twitter.com/yourusername" 
+                href="https://twitter.com/sanghu785" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-600 hover:text-primary transition-colors"
@@ -66,7 +66,7 @@ const Footer = () => {
                 <span className="sr-only">Twitter</span>
               </a>
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/sanghu785" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-600 hover:text-primary transition-colors"

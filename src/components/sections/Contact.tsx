@@ -6,7 +6,7 @@ const Contact = () => {
   // Function to open WhatsApp chat
   const openWhatsApp = () => {
     // Replace with your WhatsApp number
-    const phoneNumber = "1234567890";
+    const phoneNumber = "+918009723749";
     const message = "Hi there! I'd like to get in touch.";
     
     // Encode the message for the URL
@@ -41,7 +41,7 @@ const Contact = () => {
                 <Mail className="text-blue-600" size={20} />
               </div>
               <h3 className="font-bold mb-2">Email</h3>
-              <p className="text-gray-600">your.email@example.com</p>
+              <p className="text-gray-600">sanghpriya785@gmail.com</p>
             </a>
             
             {/* WhatsApp */}

@@ -26,13 +26,7 @@ const achievements = [
     title: "Featured Expert",
     description: "Featured as an expert speaker at multiple industry conferences",
     icon: <Award className="text-purple-500" size={24} />,
-  },
-  {
-    id: 5,
-    title: "Published Author",
-    description: "Published articles in leading industry publications and journals",
-    icon: <Zap className="text-green-500" size={24} />,
-  },
+  }
 ];
 
 const Achievements = () => {

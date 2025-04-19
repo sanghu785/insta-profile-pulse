@@ -60,7 +60,7 @@ The world of content creation is constantly evolving. Stay updated with trends, 
 Remember, everyone starts somewhere. Focus on creating value for your audience and being authentic, and the rest will follow.
     `,
     date: "April 10, 2023",
-    author: "Your Name",
+    author: "sanghu",
     coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643",
     tags: ["Content Creation", "Digital Marketing", "Social Media"]
   },

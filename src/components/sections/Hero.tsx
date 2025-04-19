@@ -6,7 +6,7 @@ const Hero = () => {
   // Function to open WhatsApp chat
   const openWhatsApp = () => {
     // Replace with your WhatsApp number
-    const phoneNumber = "1234567890"; 
+    const phoneNumber = "+918009723749"; 
     const message = "Hi there! I saw your portfolio and wanted to connect.";
     
     // Encode the message for the URL

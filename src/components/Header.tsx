@@ -41,7 +41,7 @@ const Header = () => {
     >
       <div className="container-custom py-4 px-4 flex justify-between items-center">
         <Link to="/" className="text-xl font-poppins font-bold">
-          Your Name
+          Sanghpriya
         </Link>
 
         {/* Desktop Navigation */}
