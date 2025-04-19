@@ -31,6 +31,19 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMobileMenuOpen]);
 
+  // Handle smooth scrolling for anchor links
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      // Close mobile menu if open
+      setIsMobileMenuOpen(false);
+      // Update URL without navigation
+      window.history.pushState({}, "", `${window.location.pathname}#${sectionId}`);
+    }
+  };
+
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -49,16 +62,16 @@ const Header = () => {
           <Link to="/" className="font-medium hover:text-primary transition-colors">
             Home
           </Link>
-          <a href="/#about" className="font-medium hover:text-primary transition-colors">
+          <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="font-medium hover:text-primary transition-colors">
             About
           </a>
-          <a href="/#achievements" className="font-medium hover:text-primary transition-colors">
+          <a href="#achievements" onClick={(e) => scrollToSection(e, "achievements")} className="font-medium hover:text-primary transition-colors">
             Achievements
           </a>
-          <a href="/#blog" className="font-medium hover:text-primary transition-colors">
+          <a href="#blog" onClick={(e) => scrollToSection(e, "blog")} className="font-medium hover:text-primary transition-colors">
             Blog
           </a>
-          <a href="/#contact" className="font-medium hover:text-primary transition-colors">
+          <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="font-medium hover:text-primary transition-colors">
             Contact
           </a>
         </nav>
@@ -88,30 +101,30 @@ const Header = () => {
               Home
             </Link>
             <a 
-              href="/#about" 
+              href="#about" 
+              onClick={(e) => scrollToSection(e, "about")}
               className="font-medium hover:text-primary transition-colors px-4 py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               About
             </a>
             <a 
-              href="/#achievements" 
+              href="#achievements" 
+              onClick={(e) => scrollToSection(e, "achievements")}
               className="font-medium hover:text-primary transition-colors px-4 py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               Achievements
             </a>
             <a 
-              href="/#blog" 
+              href="#blog" 
+              onClick={(e) => scrollToSection(e, "blog")}
               className="font-medium hover:text-primary transition-colors px-4 py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               Blog
             </a>
             <a 
-              href="/#contact" 
+              href="#contact" 
+              onClick={(e) => scrollToSection(e, "contact")}
               className="font-medium hover:text-primary transition-colors px-4 py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact
             </a>

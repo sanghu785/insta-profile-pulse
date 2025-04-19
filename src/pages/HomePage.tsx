@@ -11,14 +11,21 @@ const HomePage = () => {
   return (
     <Layout>
       <Hero />
-      <About />
+      <section id="about">
+        <About />
+      </section>
       {/* Removed visitor counter div */}
-      <Achievements />
-      <BlogPreview />
-      <Contact />
+      <section id="achievements">
+        <Achievements />
+      </section>
+      <section id="blog">
+        <BlogPreview />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
     </Layout>
   );
 };
 
 export default HomePage;
-

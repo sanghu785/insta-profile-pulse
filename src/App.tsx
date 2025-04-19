@@ -34,6 +34,23 @@ const App = () => {
   // Get the base URL from the environment variables or default to '/'
   const baseUrl = import.meta.env.BASE_URL || '/';
 
+  // Function to handle hash navigation on initial load
+  useEffect(() => {
+    // Check if there's a hash in the URL on initial load
+    const hash = window.location.hash;
+    if (hash) {
+      // Remove the # symbol
+      const id = hash.substring(1);
+      // Find and scroll to the element
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500); // Small delay to ensure the page has loaded
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
