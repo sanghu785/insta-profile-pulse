@@ -9,7 +9,6 @@ import HomePage from "./pages/HomePage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import NotFound from "./pages/NotFound";
-import Index from "./pages/Index";
 
 // Configure queryClient with retry and stale time options
 const queryClient = new QueryClient({
@@ -32,12 +31,15 @@ const App = () => {
     return null;
   };
 
+  // Get the base URL from the environment variables or default to '/'
+  const baseUrl = import.meta.env.BASE_URL || '/';
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <BrowserRouter basename={baseUrl}>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />

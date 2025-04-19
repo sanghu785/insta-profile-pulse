@@ -5,7 +5,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: process.env.NODE_ENV === 'production' ? '/personal-portfolio/' : '/',
+  // Use a dynamic base URL that works for both development and production
+  base: mode === 'production' ? '/personal-portfolio/' : '/',
   server: {
     host: "::",
     port: 8080,
